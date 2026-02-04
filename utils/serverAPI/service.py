@@ -6,7 +6,7 @@ class ServerAPIService:
     BASE_URL = "https://api.policeroleplay.community/v1"
 
     def __init__(self):
-        self.api_key = "" # uhhhh, i dont have that
+        self.api_key = "ykFoeVsPeWArdNaBCiCu-rtzzpreZPrsHlQRwagMxeKDGrgrShnMjXeamBXBl" # uhhhh, i dont have that
         self.headers = {
             "server-key": self.api_key,
             "Accept": "*/*"

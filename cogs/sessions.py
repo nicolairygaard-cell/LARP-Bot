@@ -69,18 +69,20 @@ class sessions(commands.Cog):
                 f"<:Arrow:1446532329290858526> Server Name: {serverInfo['Name']}\n"
                 f"<:Arrow:1446532329290858526> Current Players: {serverInfo['CurrentPlayers']}/{serverInfo['MaxPlayers']}\n"
                 f"<:Arrow:1446532329290858526> Queue: `{queue}`\n"
-                f"<:Arrow:1446532329290858526> Server Code: i frgor mb\n"
-                f"<:Arrow:1446532329290858526> Server Owner: Ehm we dont have that info lol\n"
+                f"<:Arrow:1446532329290858526> Server Code: [LARPPS](https://policeroleplay.community/join/LARPPS)\n"
+                f"<:Arrow:1446532329290858526> Server Owner: [Nicolai_ryggard](https://www.roblox.com/users/2908274817/profile)\n"
             ),
             inline=False
         )
         embed.set_footer(
             text=f"Started by {interaction.user}", icon_url=interaction.user.avatar)
 
+        embed.set_image('https://media.discordapp.net/attachments/1460315004401221785/1467902454992736399/New_Project_6.webp?ex=6984b531&is=698363b1&hm=0b3d0f0b94c9fb16974201649460360e0865cf7da359d276632e786c409cd3be&=&format=webp&width=2576&height=860')
+
         try:
             session_channel = self.bot.get_channel(SESSION_CHANNEL_ID)
             if session_channel:
-                await session_channel.send(content="<@&1408082244693786718>", embed=embed, view=SessionView())
+                await session_channel.send(content="<@&1460687235157463080>", embed=embed, view=SessionView())
                 await logCommand(
                     self.bot,
                     "startsession",
@@ -119,6 +121,9 @@ class sessions(commands.Cog):
         )
         embed.set_footer(
             text=f"Session shutdown by {interaction.user}", icon_url=interaction.user.avatar)
+
+        embed.set_image('https://media.discordapp.net/attachments/1460315004401221785/1467902454992736399/New_Project_6.webp?ex=6984b531&is=698363b1&hm=0b3d0f0b94c9fb16974201649460360e0865cf7da359d276632e786c409cd3be&=&format=webp&width=2576&height=860')
+
         await self.bot.get_channel(SESSION_CHANNEL_ID).send(embed=embed)
         await interaction.followup.send(content="Session ended!", ephemeral=True)
         await logCommand(
@@ -160,10 +165,12 @@ class sessions(commands.Cog):
             icon_url=interaction.user.avatar
         )
 
+        embed.set_image('https://media.discordapp.net/attachments/1460315004401221785/1467902454992736399/New_Project_6.webp?ex=6984b531&is=698363b1&hm=0b3d0f0b94c9fb16974201649460360e0865cf7da359d276632e786c409cd3be&=&format=webp&width=2576&height=860')
+
         view = VoteView(self.bot, interaction.user, goal)
 
         session_channel = self.bot.get_channel(SESSION_CHANNEL_ID)
-        await session_channel.send(content="<@&1408082244693786718>", embed=embed, view=view)
+        await session_channel.send(content="<@&1460687235157463080>", embed=embed, view=view)
 
         await interaction.followup.send(f"Session vote started! Required votes: **{goal}**", ephemeral=True)
 
@@ -198,7 +205,8 @@ class sessions(commands.Cog):
         )
         embed.set_footer(
             text=f"Session boost by {interaction.user}", icon_url=interaction.user.avatar)
-        await self.bot.get_channel(SESSION_CHANNEL_ID).send(content="<@&1408082244693786718> @everyone", embed=embed, view=SessionView()) 
+        embed.set_image('https://media.discordapp.net/attachments/1460315004401221785/1467902454992736399/New_Project_6.webp?ex=6984b531&is=698363b1&hm=0b3d0f0b94c9fb16974201649460360e0865cf7da359d276632e786c409cd3be&=&format=webp&width=2576&height=860')
+        await self.bot.get_channel(SESSION_CHANNEL_ID).send(content="<@&1460687235157463080> @everyone", embed=embed, view=SessionView())
         await interaction.followup.send(content="Session boost announced.", ephemeral=True)
         await logCommand(
             self.bot,
