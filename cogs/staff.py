@@ -14,7 +14,7 @@ from discord.ext import commands
 from discord import app_commands, interactions
 # from utils.checks import checkAuthorized
 from cogs import MassShiftView
-from utils.logger import INFRACTIONLOG_CHANNEL_ID, PROMOLOG_CHANNEL_ID, MSLOG_CHANNEL_ID, logCommand
+from utils.logger import INFRACTIONLOG_CHANNEL_ID, PROMOLOG_CHANNEL_ID, logCommand
 
 
 ALLOWED_ROLE_IDS = [
